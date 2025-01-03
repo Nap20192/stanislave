@@ -7,10 +7,79 @@
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
+/* Общие стили для всех элементов формы */
+* {
+  box-sizing: border-box; /* Убираем возможные проблемы с размерами */
+  margin: 0;
+  padding: 0;
+}
+
+
+/* Сброс стилей для input, button, select, textarea */
+input,
+button,
+select,
+textarea {
+  background: none;
+  border: none;
+  font: inherit;
+  color: inherit;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  width: 100%; /* Растягиваем элементы по ширине контейнера, если нужно */
+  line-height: normal;
+}
+
+/* Стили для button */
+button {
+  cursor: pointer; /* Указатель на кнопке */
+}
+
+/* Стили для input типа "button", "submit", "reset" */
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+button {
+  background-color: #1e3a8a; /* Пример фона */
+  color: white;
+  border-radius: 4px;
+  padding: 10px 20px;
+}
+
+/* Стили для textarea */
+textarea {
+  resize: vertical; /* Оставляем возможность изменения размера по вертикали */
+}
+
+/* Стили для select */
+select {
+  appearance: none; /* Убираем стандартный стиль на некоторых браузерах */
+  background-color: transparent; /* Делаем фон прозрачным */
+  border: 1px solid #ccc; /* Добавляем стандартную границу */
+  padding: 8px 10px;
+}
+
+/* Добавляем стили для фокуса (по желанию) */
+input:focus,
+button:focus,
+select:focus,
+textarea:focus {
+  outline: none; /* Убираем стандартное обрамление при фокусе */
+  border: 2px solid #1e3a8a; /* Пример стилизации фокуса */
+}
+
+
  p {
     margin: 0;
     padding: 0;
 }
+button {
+  all: unset; /* Сбрасывает все стили */
+  display: inline-block; /* Устанавливает поведение inline-блока */
+  cursor: pointer; /* Указывает, что элемент кликабельный */
+}
+
  html {
     line-height: 1.15; /* 1 */
     -webkit-text-size-adjust: 100%; /* 2 */
