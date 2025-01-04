@@ -23,22 +23,32 @@ p{
   font-style: normal;
   margin:auto;
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-    @media (max-width: 600px) {
-      :root{
-        --m-width: 385px;
-        --width:345px;
-       
-    }
-    }
-    @media (min-width: 1400px) {
-      :root{
-        --m-width: 1400px;
-        --width:1200px;
-    }
-    }
 
+
+@media (min-width: 600px) and (max-width: 1024px) {
+  :root {
+    --m-width: 768px;
+    --width: 720px;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1400px) {
+  :root {
+    --m-width: 1200px;
+    --width: 1000px;
+  }
+}
+
+@media (min-width: 1400px) {
+  :root {
+    --m-width: 1400px;
+    --width: 1200px;
+  }
+}
     .container {
         display: flex;
         justify-content: center;
@@ -77,28 +87,28 @@ p{
     .banner_1 {
       margin: auto;
         width: var(--width);
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: space-between;
-        padding: 100px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        padding: 40px;
         background-color: var(--bg-color);
       }
       
       .text-content {
-        max-width: 40%;
-        min-width: 417px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        gap: 20px;
+        text-align: left;
       }
       
       .text-content h1 {
-        font-size: 2.5rem;
         line-height: 1.2;
         color: var(--text-color);
-        margin-bottom: 1rem;
       }
       
       .text-content p {
-        font-size: 1rem;
         color: var(--accent-color);
       }
       
@@ -106,35 +116,37 @@ p{
         position: relative;
         display: flex;
         justify-content: center;
-        width: 485px;
-        gap:20px
+        max-width: 485px;
+        gap:20px;
+        width: 100%;
       }
       
       .image-slice {
         background-size: cover;
         background-position: center;
-        max-width: 485px;
-        height: 444px;
+        height: 433px;
       }
       
       .image-slice.left {
-        width: 232.6px;
+        width: 100%;
         background-image: url('image.png');
         background-position: left;
+        background-size: cover;
+        background-repeat: no-repeat;
       }
-      
       .image-slice.right {
-        width: 232.6px;
+        width: 100%;
+        background-size: cover;
         background-image: url('image.png');
         background-position: right;
       }
+
+      
+
       
       .catalog-link {
-        position:absolute;
-        width: 100%;
+        width: 250px;
         padding: 10px 20px;
-        bottom: -13%;
-        right: 0px;
         background-color: var(--button-color);
         border-radius: 5px;
         
@@ -149,44 +161,43 @@ p{
       
       .info-badge {
         position: absolute;
-        top: 1%;
-        right: 15px;
-        background-color: var(--bg-color);
-        padding: 0.5rem 1rem;
-        font-size: 0.8rem;
-        color: var(--accent-color);
-        border-left: 3px solid var(--accent-color);
+        font-size:10px;
+        width:300px;
+        right: -40px;
+        top: -30px;
+        font-weight: 700;
+        color: #0044cc;
       }
 
       .banner_2{
         margin-top: 100px;
         margin-bottom: 100px;
         max-width: var(--m-width);
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        justify-content: center;
+        gap:20px;
+
         & .text-content{
-          width: 50%;
           display: flex;
           flex-direction: column;
           gap: 10px;
-          min-width:400px ;
+          min-width:300px ;
           padding: 50px;
           background-color: var(--bg-color);
         }
         & .cards{
-          width: 50%;
           display: flex;
           flex-direction: column;
           justify-content: space-around;
+          align-items:center ;
           gap:20px;
           & .card{
             display:flex;
             flex-direction: row;
             gap: 10px;
             flex-wrap: wrap;
+            justify-content: center;
             align-items: center;
             & img{
               width: 282px;
@@ -225,15 +236,18 @@ p{
       }
       
       .banner_3 {
-       display: flex;
-        padding: 0;
-        justify-content: space-between;
+        display: flex;
         align-items: center;
-        padding: 100px;
+        justify-content: center;
+        padding: 50px;
         background-color: var(--bg-color);
         & h1{
-          max-width: 637px;
+          max-width: 500px;
           text-align: center;
+        }
+        & .content{
+          max-width: 1000px;
+          min-width: 300px;
         }
       }
       footer{
@@ -262,9 +276,27 @@ p{
         flex-direction: column;
         flex-wrap: wrap;
         gap: 30px;
-        & .content{
-          min-width: 400px;
+        & input {
+          width: 100%;
+          padding: 10px;
+          margin-bottom: 15px;
+          border: 2px solid #ccc;
+          border-radius: 5px;
+          font-size: 1rem;
+          transition: border-color 0.3s, box-shadow 0.3s;
         }
+        
+        & input:hover {
+          border-color: #1e3a8a; /* Меняем цвет рамки при наведении */
+        }
+        
+        & input:focus {
+          border-color: #0044cc; /* Меняем цвет рамки при фокусе */
+          box-shadow: 0 0 10px rgba(0, 68, 204, 0.5); /* Добавляем эффект свечения */
+          outline: none; /* Убираем стандартную обводку */
+        }
+        
+
         & button{
           background-color: var(--button-color);
           border-radius: 5px;
@@ -275,4 +307,36 @@ p{
           justify-content: center;
           color: white;
         }
+      }
+
+      @media (max-width: 600px) {
+        .image-slice{
+          height: 400px;
+        }
+
+      }
+      
+      
+      @media  (max-width: 1024px) {
+      .banner_1{
+        grid-template-columns: 1fr;
+      }
+      .banner_2{
+        grid-template-columns: repeat(1,1fr);
+      }
+      h1{
+        font-size: 25px;
+        font-weight: 400;
+      }
+      h2{
+        font-size: 20px;
+        font-weight: 400;
+      }
+      p{
+        font-size: 15px;
+      }
+      }
+      @media (min-width: 1025px) {
+      
+      
       }

@@ -38,16 +38,19 @@
             <div class="text-content">
               <h1>Hyundai: Надежность и комфорт на дорогах</h1>
               <p>Выбери Hyundai для вдохновляющего и безопасного вождения</p>
+              <div class="catalog-link">
+                <a href="#">Каталог Hyundai</a>
+              </div>
             </div>
             <div class="image-content">
                 <div class="image-slice left"></div>
                 <div class="image-slice right"></div>
-                <div class="catalog-link">
-                <a href="#">Каталог Hyundai</a>
-              </div>
-              <div class="info-badge">
-                <p>Hyundai Motor Company на рынке с 1967 года</p>
-              </div>
+<!--
+<div class="info-badge">
+  <h1>Hyundai Motor Company на рынке с 1967 года</h1>
+</div>
+-->
+
             </div>
         </div>
     </div>
@@ -89,7 +92,6 @@
         </div>
     </div>
     <div class="banner_3">
-        <img src="image 2.png" alt="Car Image Left">
         <div class="content">
             <h1>Сложно выбрать модель своей мечты? Мы вам поможем!</h1>
             <form>
@@ -100,7 +102,6 @@
               <button type="submit">Заказать звонок</button>
             </form>
         </div>
-        <img src="image 3.png" alt="Car Image Left">
     </div>
     <footer>
         <div class="footer__box">
@@ -112,5 +113,13 @@
         </div>
     </footer>
     
+    <script>
+        document.querySelectorAll('.image-slice').forEach(slice => {
+            const height = slice.offsetHeight;
+            const aspectRatio = 232.6/504 ; 
+            const width = height * aspectRatio;
+            slice.style.width = `${width}px`;
+        });
+    </script>
 </body>
 </html>
