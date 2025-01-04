@@ -310,7 +310,14 @@ p{
       }
 
       @media (max-width: 600px) {
+        .banner_1{
+          padding: 10px;
+        }
+        .image-content{
+          gap: 10px;
+        }
         .image-slice{
+
           height: 400px;
         }
 
