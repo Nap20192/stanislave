@@ -19,7 +19,6 @@
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
   transition: left 0.3s ease;
   z-index: 1000;
-  padding: 20px;
 }
 
 .burger-menu.active {
@@ -169,6 +168,8 @@ nav {
 .menu {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  padding: 10px 30px;
   gap: 10px;
 }
 
